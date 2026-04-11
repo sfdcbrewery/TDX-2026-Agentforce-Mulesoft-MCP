@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Surfaces overdue invoices and payment gaps for an account via MuleSoft MCP billing signals tool. Returns billing risk indicators that may signal deal risk or customer churn.</description>
+    <invocationTargetType>flow</invocationTargetType>
+    <invocationTarget>Check_Billing_Signals_MCP</invocationTarget>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <masterLabel>Check Billing Signals MCP</masterLabel>
+</GenAiFunction>

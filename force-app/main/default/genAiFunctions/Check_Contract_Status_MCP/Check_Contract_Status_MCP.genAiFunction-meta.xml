@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Returns unsigned contracts and upcoming renewals for an account or opportunity via MuleSoft MCP contract status tool. Identifies contract blockers that could delay deal closure.</description>
+    <invocationTargetType>flow</invocationTargetType>
+    <invocationTarget>Check_Contract_Status_MCP</invocationTarget>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <masterLabel>Check Contract Status MCP</masterLabel>
+</GenAiFunction>

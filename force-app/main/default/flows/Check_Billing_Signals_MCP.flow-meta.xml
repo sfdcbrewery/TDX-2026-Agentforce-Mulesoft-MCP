@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <description>Agentforce action: Calls the MuleSoft Billing Signals MCP tool to check for overdue invoices and payment gaps for an account.</description>
+    <label>Check Billing Signals MCP</label>
+    <processType>AutoLaunchedFlow</processType>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <start>
+        <locationX>176</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Call_Billing_Signals_MCP</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+
+    <variables>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <dataType>String</dataType>
+        <name>accountId</name>
+    </variables>
+    <variables>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <dataType>String</dataType>
+        <name>accountName</name>
+    </variables>
+    <variables>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <dataType>String</dataType>
+        <name>billingSignalsResponse</name>
+    </variables>
+    <variables>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <dataType>Boolean</dataType>
+        <name>callSucceeded</name>
+    </variables>
+
+    <actionCalls>
+        <name>Call_Billing_Signals_MCP</name>
+        <label>Call Billing Signals MCP</label>
+        <locationX>176</locationX>
+        <locationY>120</locationY>
+        <actionName>CheckBillingSignalsAction</actionName>
+        <actionType>apex</actionType>
+        <inputParameters>
+            <name>accountId</name>
+            <value>
+                <elementReference>accountId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>accountName</name>
+            <value>
+                <elementReference>accountName</elementReference>
+            </value>
+        </inputParameters>
+        <outputParameters>
+            <assignToReference>billingSignalsResponse</assignToReference>
+            <name>response</name>
+        </outputParameters>
+        <outputParameters>
+            <assignToReference>callSucceeded</assignToReference>
+            <name>success</name>
+        </outputParameters>
+        <storeOutputAutomatically>false</storeOutputAutomatically>
+    </actionCalls>
+</Flow>

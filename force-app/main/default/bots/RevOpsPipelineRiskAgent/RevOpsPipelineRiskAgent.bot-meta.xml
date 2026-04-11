@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bot xmlns="http://soap.sforce.com/2006/04/metadata">
+    <agentType>EinsteinServiceAgent</agentType>
+    <botMlDomain>
+        <label>RevOps Pipeline Risk Agent</label>
+        <name>RevOpsPipelineRiskAgent</name>
+    </botMlDomain>
+    <botUser>revopspipelineriskagent@00ddl00000qam4x1935288483.ext</botUser>
+    <description>Assesses deal health, billing signals, and contract status for pipeline risk.</description>
+    <label>RevOps Pipeline Risk Agent</label>
+    <logPrivateConversationData>false</logPrivateConversationData>
+    <richContentEnabled>true</richContentEnabled>
+    <sessionTimeout>0</sessionTimeout>
+    <type>ExternalCopilot</type>
+</Bot>

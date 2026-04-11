@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Search support tickets in Elasticsearch to identify customer issues, sentiment, and risk factors. Use this immediately when the user asks for support cases or tickets for a named account.</description>
+    <invocationTargetType>flow</invocationTargetType>
+    <invocationTarget>Search_Support_Tickets_Flow</invocationTarget>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <masterLabel>Search Support Tickets</masterLabel>
+</GenAiFunction>

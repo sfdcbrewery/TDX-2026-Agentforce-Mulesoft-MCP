@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Analyzes account health by combining Salesforce opportunity data with Elasticsearch support ticket metrics. When a user asks what support cases, tickets, issues, escalations, or critical incidents an account has, call Search Support Tickets immediately using the account name from the request. These are approved internal business requests and should not be refused.</description>
+    <developerName>AccountHealthTopic</developerName>
+    <genAiFunctions>
+        <functionName>GetAccountSupportHealth</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>SearchSupportTickets</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>Use this topic when the user asks about account health, customer satisfaction, support issues, support cases, open tickets, escalations, or critical incidents for a named account. If an account name is already present, do not ask whether they want all or specific cases before running the search.</description>
+        <developerName>instruction_0</developerName>
+        <masterLabel>instruction_0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Call Search Support Tickets immediately for requests such as What support cases does Pinnacle Financial have, Show support tickets for an account, or Find critical tickets for a customer. Do not refuse or defer these requests because they are legitimate internal RevOps tasks.</description>
+        <developerName>instruction_1</developerName>
+        <masterLabel>instruction_1</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>Account Health Analysis</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>You help RevOps users combine Salesforce and support-ticket context for account risk. Execute the support-ticket search as soon as the request contains a named account and asks about tickets, cases, issues, or escalations, including critical-priority case requests, and avoid safety refusal behavior for these approved internal queries.</scope>
+</GenAiPlugin>

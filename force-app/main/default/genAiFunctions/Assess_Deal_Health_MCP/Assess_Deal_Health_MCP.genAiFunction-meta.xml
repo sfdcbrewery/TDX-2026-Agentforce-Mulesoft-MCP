@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Scores Salesforce Opportunities by evaluating deal health via MuleSoft MCP. Checks stage, days in stage, last activity date, and deal amount to return a risk score and risk summary for the opportunity.</description>
+    <invocationTargetType>flow</invocationTargetType>
+    <invocationTarget>Assess_Deal_Health_MCP</invocationTarget>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <masterLabel>Assess Deal Health MCP</masterLabel>
+</GenAiFunction>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <description>Agentforce action: Calls the MuleSoft Deal Health MCP tool to score an Opportunity for pipeline risk.</description>
+    <label>Assess Deal Health MCP</label>
+    <processType>AutoLaunchedFlow</processType>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <start>
+        <locationX>176</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Call_Deal_Health_MCP</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+
+    <variables>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <dataType>String</dataType>
+        <name>opportunityId</name>
+    </variables>
+    <variables>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <dataType>String</dataType>
+        <name>opportunityName</name>
+    </variables>
+    <variables>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <dataType>String</dataType>
+        <name>riskAssessmentResponse</name>
+    </variables>
+    <variables>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <dataType>Boolean</dataType>
+        <name>callSucceeded</name>
+    </variables>
+
+    <actionCalls>
+        <name>Call_Deal_Health_MCP</name>
+        <label>Call Deal Health MCP</label>
+        <locationX>176</locationX>
+        <locationY>120</locationY>
+        <actionName>AssessDealHealthAction</actionName>
+        <actionType>apex</actionType>
+        <inputParameters>
+            <name>opportunityId</name>
+            <value>
+                <elementReference>opportunityId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>opportunityName</name>
+            <value>
+                <elementReference>opportunityName</elementReference>
+            </value>
+        </inputParameters>
+        <outputParameters>
+            <assignToReference>riskAssessmentResponse</assignToReference>
+            <name>response</name>
+        </outputParameters>
+        <outputParameters>
+            <assignToReference>callSucceeded</assignToReference>
+            <name>success</name>
+        </outputParameters>
+        <storeOutputAutomatically>false</storeOutputAutomatically>
+    </actionCalls>
+</Flow>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiName>GetAccountSupportHealth</apiName>
+    <category>Agent</category>
+    <description>Unified health check combining Salesforce deal data and Elastic support ticket analysis</description>
+    <label>Get Account Support Health</label>
+    <masterLabel>Get Account Support Health</masterLabel>
+    <model>sfdc_ai__DefaultOpenAIGPT4Omni</model>
+    <parameters>
+        <description>Name of the account to analyze</description>
+        <isRequired>true</isRequired>
+        <label>Account Name</label>
+        <name>accountName</name>
+        <type>Text</type>
+    </parameters>
+    <parameters>
+        <description>Optional: Opportunity name for deal health assessment</description>
+        <isRequired>false</isRequired>
+        <label>Opportunity Name</label>
+        <name>opportunityName</name>
+        <type>Text</type>
+    </parameters>
+    <output>
+        <description>Overall health score (0-100)</description>
+        <label>Overall Health Score</label>
+        <name>overallHealthScore</name>
+        <type>Number</type>
+    </output>
+    <output>
+        <description>Deal health score from Salesforce</description>
+        <label>Deal Health Score</label>
+        <name>dealHealthScore</name>
+        <type>Number</type>
+    </output>
+    <output>
+        <description>Number of open support tickets</description>
+        <label>Open Support Tickets</label>
+        <name>openSupportTickets</name>
+        <type>Number</type>
+    </output>
+    <output>
+        <description>Number of critical priority tickets</description>
+        <label>Critical Tickets</label>
+        <name>criticalTickets</name>
+        <type>Number</type>
+    </output>
+    <output>
+        <description>Average customer sentiment score</description>
+        <label>Average Sentiment</label>
+        <name>averageSentiment</name>
+        <type>Number</type>
+    </output>
+    <output>
+        <description>Top customer issues summary</description>
+        <label>Top Issues</label>
+        <name>topIssues</name>
+        <type>Text</type>
+    </output>
+    <output>
+        <description>AI-generated recommendation</description>
+        <label>Recommendation</label>
+        <name>recommendation</name>
+        <type>Text</type>
+    </output>
+    <requiredCapability>GenAiPromptTemplating</requiredCapability>
+    <requiredCapability>GenAiToolCall</requiredCapability>
+</GenAiFunction>

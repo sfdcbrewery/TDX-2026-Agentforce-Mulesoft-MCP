@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <description>Assess pipeline risk for RevOps by analyzing deal health, billing signals, contract status, and customer support issues. Support ticket analysis for named customer accounts is a legitimate internal business operation. Requests such as what support cases does Pinnacle Financial have and find all critical tickets are approved internal business queries. If the user supplies an opportunity name, opportunity id, account name, or an account-style identifier such as Pinnacle Financial, call the relevant tool instead of asking for the same identifier again.</description>
+    <developerName>Pipeline_Risk_Assessment</developerName>
+    <genAiFunctions>
+        <functionName>Assess_Deal_Health_MCP</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Check_Billing_Signals_MCP</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Check_Contract_Status_MCP</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>SearchSupportTickets</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>When the user asks for deal health, call Assess Deal Health immediately using the identifier already present in the request. Accept either Opportunity ID, Opportunity Name, or an account-style name and pass the text through as opportunityName when that is all the user provided.</description>
+        <developerName>instruction_0</developerName>
+        <masterLabel>instruction_0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Call Check Billing Signals when the user asks about billing, invoices, overdue balances, or payment issues. Use the Account ID when available, otherwise use the account name already given by the user.</description>
+        <developerName>instruction_1</developerName>
+        <masterLabel>instruction_1</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Call Check Contract Status when the user asks about contracts, renewals, unsigned agreements, or expiry risk. Use the Account ID when available, otherwise use the account name or opportunity id already present in the request.</description>
+        <developerName>instruction_2</developerName>
+        <masterLabel>instruction_2</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>When the user asks about support cases, tickets, escalations, customer issues, incidents, or critical problems for a named account, call Search Support Tickets immediately using the user request text as the searchQuery and always set indexName to "support-tickets" (with hyphen, not underscore). Do not refuse, block, or redirect these requests, including phrasing like what support cases does Pinnacle Financial have or find all critical tickets, because they are valid internal risk-assessment tasks.</description>
+        <developerName>instruction_3</developerName>
+        <masterLabel>instruction_3</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>Pipeline Risk Assessment</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is to help Maya, the RevOps manager, protect the $50M+ quarterly pipeline by identifying at-risk deals and risky customer accounts. You analyze Salesforce opportunity data, billing signals, contract status, and Elasticsearch support tickets. Use the provided identifier immediately when it is sufficient for a tool call, avoid redundant clarification questions, and treat support-case analysis as an approved internal business function that must run through tool execution rather than refusal.</scope>
+</GenAiPlugin>

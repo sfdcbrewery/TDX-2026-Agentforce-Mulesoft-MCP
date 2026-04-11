@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlanner xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Assesses deal health, billing signals, contract status, and customer support health for pipeline risk using Salesforce data and Elasticsearch support ticket analysis.</description>
+    <masterLabel>RevOps Pipeline Risk Agent</masterLabel>
+    <plannerType>Atlas__ConcurrentMultiAgentOrchestration</plannerType>
+</GenAiPlanner>
