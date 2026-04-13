@@ -1,4 +1,8 @@
+
 # RevOps Pipeline Risk Agent
+
+<img width="2016" height="1212" alt="agent-architecture" src="https://github.com/user-attachments/assets/97c801f9-ac35-4361-8082-f275a167701f" />
+
 
 Salesforce Agentforce agent that helps RevOps teams protect $50M+ quarterly pipelines by analyzing deal health, billing signals, contract status, and customer support tickets through dual MCP (Model Context Protocol) integration.
 
